@@ -27,7 +27,7 @@ public class PersonContoller {
 	private PersonService service;
 
   @PostMapping("/person")
-	public ResponseEntity<Object> savePerson(@RequestBody @Valid PersonRequest personDTO) throws Exception{
+	public ResponseEntity<?> savePerson(@RequestBody @Valid PersonRequest personDTO) throws Exception{
 		PersonResponse response;
 		try {			
 			response = service.savePerson(personDTO);

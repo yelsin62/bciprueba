@@ -15,7 +15,7 @@ import com.bci.prueba.model.Phone;
 import com.bci.prueba.repository.PersonRepository;
 import com.bci.prueba.repository.PhoneRepository;
 import com.bci.prueba.service.PersonService;
-import com.bci.prueba.util.TokenService;
+import com.bci.prueba.util.TokenServiceImpl;
 
 @Service
 public class PersonServiceImpl  implements PersonService{
@@ -55,7 +55,7 @@ public class PersonServiceImpl  implements PersonService{
       .build();
       phoneRepository.save(phoneSave);
     });
-    TokenService tokenService = new TokenService();
+    TokenServiceImpl tokenService = new TokenServiceImpl();
     
     PersonResponse response = PersonResponse.builder()
     .id(uuid)
