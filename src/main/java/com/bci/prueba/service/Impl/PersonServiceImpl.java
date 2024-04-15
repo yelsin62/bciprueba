@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bci.prueba.dtomodel.PersonRequest;
 import com.bci.prueba.dtomodel.PersonResponse;
@@ -26,6 +27,7 @@ public class PersonServiceImpl  implements PersonService{
   private PhoneRepository phoneRepository;
 
   @Override
+  @Transactional
   public PersonResponse savePerson(PersonRequest request) throws Exception {
 
     Person personSearch=personRepository.getPersonByEmail(request.getEmail());
